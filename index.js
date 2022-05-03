@@ -3,7 +3,7 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const generatePage = require('./src/page-template')
-const writeFile = require('./utils/write-file')
+const {writeFile, copyFile} = require('./utils/write-file')
 
 const team = []
 
@@ -12,7 +12,9 @@ const finishHandler = function() {
     writeFile(pageHtml)
     .then(writeFileResponse => {
         console.log(writeFileResponse.message)
+        return copyFile()
     })
+    .then(copyFileResponse => console.log(copyFileResponse.message))
     .catch(err => console.log(err))
 }
 

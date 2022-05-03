@@ -9,10 +9,25 @@ const writeFile = fileContent => {
             }
             resolve({
                 ok: true,
-                message:'Your team profile is done! Open index.html the dist directory to see it.'
+                message:'HTML file generated! Check the dist directory.'
             })
         })
     })
 }
 
-module.exports = writeFile
+const copyFile = () => {
+    return new Promise((resolve, reject) => {
+        fs.copyFile('src/style.css', 'dist/style.css', err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true,
+                message:'Profile complete! Open index.html in the dist directory to see your team profile.'
+            })
+        })
+    })
+}
+
+module.exports = {writeFile, copyFile}
