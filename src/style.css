@@ -24,7 +24,7 @@ header h1 {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 5vh 12vw;
+    margin: 5vh 5vw;
 }
 
 .card {
@@ -32,7 +32,8 @@ header h1 {
     box-shadow: 2px 2px #023047;
     padding: 2px;
     background-color: #023047;
-    margin: 10px
+    margin: 10px 3px;
+    min-width: 350px;
 }
 
 .card-header {
@@ -63,6 +64,6 @@ header h1 {
 }
 
 .card-list li {
-    font-size: 1.5em;
+    font-size: 1.3rem;
     margin: 10px auto;
 }
