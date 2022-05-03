@@ -11,8 +11,76 @@ const generateManager = function(managerInfo) {
     team.push(manager)
 }
 
+const generateEngineer = function(engineerInfo) {
+    const engineer = new Engineer(engineerInfo.name, engineerInfo.id, engineerInfo.email, engineerInfo.github)
+    team.push(engineer)
+}
+
+const generateIntern = function(internInfo) {
+    const intern = new Intern(internInfo.name, internInfo.id, internInfo.email, internInfo.school)
+    team.push(intern)
+}
+
 const engineerPrompt = function() {
-    
+    inquirer.prompt([
+        {
+            type:'input',
+            name: 'name',
+            message: "What is the engineer's name?",
+            validate: input => {
+                if (input) {
+                    return true
+                } else {
+                    console.log("Please enter the engineer's name")
+                    return false
+                }
+            }
+        },
+        {
+            type:'input',
+            name: 'id',
+            message: "What is the engineer's employee ID?",
+            validate: input => {
+                if (input) {
+                    return true
+                } else {
+                    console.log("Please enter the engineer's employee ID")
+                    return false
+                }
+            }
+        },
+        {
+            type:'input',
+            name: 'email',
+            message: "What is the engineer's email address?",
+            validate: input => {
+                if (!input || !input.includes('@') || !input.includes('.')) {
+                    console.log(' Please enter a valid email address')
+                    return false
+                }
+                else {
+                    return true
+                }
+            }
+        },
+        {
+            type:'input',
+            name: 'github',
+            message: "What is the engineer's Github username?",
+            validate: input => {
+                if (input) {
+                    return true
+                } else {
+                    console.log("Please enter the engineer's Github username")
+                    return false
+                }
+            }
+        }
+    ])
+    .then(engineer => {
+        generateEngineer(engineer)
+        teamPrompt()
+    })
 }
 
 const teamPrompt = function() {
@@ -93,7 +161,7 @@ const mainPrompt = function() {
                     return false
                 }
             }
-        },
+        }
     ])
     .then(manager => {
         generateManager(manager)
