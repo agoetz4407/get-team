@@ -11,6 +11,10 @@ const generateManager = function(managerInfo) {
     team.push(manager)
 }
 
+const engineerPrompt = function() {
+    
+}
+
 const teamPrompt = function() {
     inquirer.prompt([
         {
@@ -24,6 +28,12 @@ const teamPrompt = function() {
         switch(choice){
             case 'Engineer':
                 engineerPrompt()
+                break;
+            case 'Intern':
+                internPrompt()
+                break;
+            case 'Done':
+                generateTeam()
         }
     })
 }
@@ -85,8 +95,10 @@ const mainPrompt = function() {
             }
         },
     ])
-    .then(manager => generateManager(manager))
-    .then(teamPrompt())
+    .then(manager => {
+        generateManager(manager)
+        teamPrompt()
+    })
 }
 
 mainPrompt()
