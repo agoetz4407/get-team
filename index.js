@@ -3,12 +3,9 @@ const inquirer = require('inquirer')
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
+const generatePage = require('./src/page-template')
 
 const team = []
-
-const generateTeam = function(){
-    team.forEach(member => console.log(member))
-}
 
 const generateManager = function(managerInfo) {
     const manager = new Manager(managerInfo.name, managerInfo.id, managerInfo.email, managerInfo.officeNumber)
@@ -171,7 +168,7 @@ const teamPrompt = function() {
                 internPrompt()
                 break;
             case 'Done':
-                generateTeam()
+                generatePage(team)
         }
     })
 }
