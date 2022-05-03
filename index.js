@@ -3,12 +3,17 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const generatePage = require('./src/page-template')
+const writeFile = require('./utils/write-file')
 
 const team = []
 
 const finishHandler = function() {
     const pageHtml = generatePage(team)
-    console.log(pageHtml)
+    writeFile(pageHtml)
+    .then(writeFileResponse => {
+        console.log(writeFileResponse.message)
+    })
+    .catch(err => console.log(err))
 }
 
 const generateManager = function(managerInfo) {

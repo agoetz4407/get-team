@@ -12,11 +12,11 @@ const renderListItem = function(member) {
 const renderMemberRole = function(role) {
     switch(role) {
         case 'Manager':
-            return `<i class="fa-solid fa-people-roof"></i>Manager`
+            return `<i class="fa-solid fa-people-roof"></i> Manager`
         case 'Engineer':
-            return `<i class="fa-solid fa-gears"></i>Engineer`
+            return `<i class="fa-solid fa-gears"></i> Engineer`
         case 'Intern':
-            return `<i class="fa-solid fa-people-roof"></i>Intern`
+            return `<i class="fa-solid fa-graduation-cap"></i> Intern`
     }
 }
 
