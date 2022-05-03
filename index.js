@@ -7,6 +7,11 @@ const generatePage = require('./src/page-template')
 
 const team = []
 
+const finishHandler = function() {
+    const pageHtml = generatePage(team)
+    console.log(pageHtml)
+}
+
 const generateManager = function(managerInfo) {
     const manager = new Manager(managerInfo.name, managerInfo.id, managerInfo.email, managerInfo.officeNumber)
     team.push(manager)
@@ -168,7 +173,7 @@ const teamPrompt = function() {
                 internPrompt()
                 break;
             case 'Done':
-                generatePage(team)
+                finishHandler()
         }
     })
 }
