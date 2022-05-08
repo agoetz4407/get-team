@@ -7,9 +7,9 @@ Get-Team is a command line app using Node.js that prompts the user to enter info
 Clone this repository down to your device. Ensure Node.js is installed on your device, then type "npm install" in the command line to download dependencies for this app.
 
 ## Usage
-See this [example video]() for an example of usage.
+See this [example video](https://drive.google.com/file/d/10-SXxSnuGqMnV1Kf6gmuEq_AvxNblEwn/view) for an example of usage.
 
-Type `node index.js` in a terminal opened in the root directory of the app to run it. Enter the information for your team profile and select "Done" when being asked to add another team member to generate your HTML file.
+Type `node index.js` in a terminal opened in the root directory of the app to run it. Enter the information for your team profile and select "Done" when being asked to add another team member to generate the index.html file in the dist directory, then open that file in your browser to view your team.
 
 ## Questions
 Check out my [Github](https://github.com/agoetz4407)
