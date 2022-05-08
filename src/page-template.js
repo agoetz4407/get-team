@@ -3,7 +3,7 @@ const renderListItem = function(member) {
         case 'Manager':
             return `Office Number: ${member.officeNumber}`
         case 'Engineer':
-            return `Github: <a href="https://github.com/${member.github}">${member.github}</a>`
+            return `Github: <a href="https://github.com/${member.github}" target="_blank">${member.github}</a>`
         case 'Intern':
             return `School: ${member.school}`
     }
@@ -53,6 +53,9 @@ const generatePage = function(team) {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Team Profile</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="style.css">
     </head>
   
